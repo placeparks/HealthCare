@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('pic3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.MuiButton-root {
+  margin-left: 30px !important
+}
+.MuiTextField-root{
+  margin-left: 30px !important
+}
+.create-patient-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-patient-input {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+}
+
+.create-patient-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #0b2ef7;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-patient-button:hover {
+  background-color: #80dba3;
+}
+.form-container {
+  border-bottom: 1px solid #524f4f;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.patient-info {
+  margin-bottom: 20px;
+}
+
+.text-fields-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.text-field {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 18px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .patient-info {
+    width: 100%;
+  }
+
+  .text-fields-container {
+    width: 40%;
+  }
+
+  .text-field {
+    margin-bottom: 0;
+  }
+}
