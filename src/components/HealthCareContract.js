@@ -31,9 +31,7 @@ const HealthcareContract = () => {
         const healthcareContract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
         setContract(healthcareContract);
       } catch (error) {
-        alert(
-          `Failed to load provider, accounts, or contract. Check console for details.`,
-        );
+       
         console.error(error);
       }
     };
