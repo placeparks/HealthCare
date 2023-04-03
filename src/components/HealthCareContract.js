@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getProvider from "../utils/getProvider";
 import { ethers } from "ethers"; // Add this import
-import {
-  Container,
-} from "@material-ui/core";
 import CreatePatientForm from "./CreatePatientForm";
 import GrantAccessForm from "./GrantAccessForm";
 import RevokeAccessForm from "./RevokeAccessForm";
