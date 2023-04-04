@@ -6,23 +6,33 @@ const CreatePatientForm = ({ contract, account }) => {
     const [name, setName] = useState("");
     const [dob, setDob] = useState("");
 
-    const handleCreatePatient = async () => {
-      try {
-        const gasEstimate = await contract.estimateGas.createPatient(patientID, name, dob);
-        const tx = await contract.createPatient(patientID, name, dob, {
-          gasLimit: gasEstimate,
-        });
-        await tx.wait();
-        alert("Patient created successfully!");
-      } catch (error) {
-        console.error("Error creating patient:", error);
-        console.error("Error message:", error.message);
-        console.error("Error code:", error.code);
-        console.error("Error data:", error.data);
-        alert("Failed to create patient.");
-      }
-      
-    };
+const handleCreatePatient = async () => {
+  if (!patientID || !name || !dob) {
+    alert("Please fill all the input parameters first.");
+    return;
+  }
+
+  try {
+    const gasEstimate = await contract.estimateGas.createPatient(patientID, name, dob);
+    const tx = await contract.createPatient(patientID, name, dob, {
+      gasLimit: gasEstimate,
+    });
+    await tx.wait();
+    alert("Patient created successfully!");
+  } catch (error) {
+    console.error("Error creating patient:", error);
+    console.error("Error message:", error.message);
+    console.error("Error code:", error.code);
+    console.error("Error data:", error.data);
+
+    if (error.message.includes("revert")) {
+      alert("Patient ID already taken. Please choose another one.");
+    } else {
+      alert("Failed to create patient.");
+    }
+  }
+};
+
     
   
     return (
